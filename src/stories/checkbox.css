@@ -1,0 +1,79 @@
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  .checkbox-label.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .checkbox-input {
+    display: none;
+  }
+  
+  .checkbox-custom {
+    width: 16px;
+    height: 16px;
+    border: 2px solid currentColor;
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+    background-color: transparent;
+  }
+  
+  /* Default checkmark */
+  .checkbox-input:checked + .checkbox-custom::after {
+    content: '✔';
+    font-size: 12px;
+    position: absolute;
+    top: -2px;
+    left: 2px;
+  }
+  
+  /* Variants */
+  .storybook-checkbox--primary {
+    color: #FF69B4; /* pink */
+  }
+  
+  .storybook-checkbox--primary .checkbox-input:checked + .checkbox-custom {
+    background-color: #FF69B4;
+    border-color: #FF69B4;
+  }
+  
+  .storybook-checkbox--primary .checkbox-input:checked + .checkbox-custom::after {
+    color: white;
+  }
+  
+  .storybook-checkbox--secondary {
+    color: #FF69B4; /* pink border & checkmark */
+  }
+  
+  .storybook-checkbox--secondary .checkbox-custom {
+    background-color: white;
+  }
+  
+  .storybook-checkbox--secondary .checkbox-input:checked + .checkbox-custom {
+    background-color: white;
+    border-color: #FF69B4;
+  }
+  
+  .storybook-checkbox--secondary .checkbox-input:checked + .checkbox-custom::after {
+    color: #FF69B4; /* pink tick */
+  }
+  
+  .storybook-checkbox--ken {
+    color: #0D98BA; /* blue */
+  }
+  
+  .storybook-checkbox--ken .checkbox-input:checked + .checkbox-custom {
+    background-color: #0D98BA;
+    border-color: #0D98BA;
+  }
+  
+  .storybook-checkbox--ken .checkbox-input:checked + .checkbox-custom::after {
+    color: white;
+  }
+  
