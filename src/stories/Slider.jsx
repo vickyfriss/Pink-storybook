@@ -1,4 +1,3 @@
-// Slider.jsx
 import React from "react";
 import PropTypes from "prop-types";
 import "./slider.css";
@@ -17,14 +16,14 @@ const Slider = ({ label, value, onChange, variant = "Primary", size = "Medium", 
   };
 
   return (
-    <div className={`slider-wrapper ${inline ? "slider-inline" : ""}`} style={{ width: "100%" }}>
-      {label && inline && (
+    <div className={`slider-wrapper ${inline ? "slider-inline" : ""}`} data-variant={variant} style={{ width: "100%" }}>
+      {inline && label && (
         <span className="slider-label-inline" style={{ color: colors[variant], marginRight: "10px" }}>
           {label}
         </span>
       )}
       {!inline && label && (
-        <label className="slider-label" style={{ color: colors[variant] }}>
+        <label className="slider-label" style={{ color: colors[variant], marginBottom: "5px", display: "block" }}>
           {label}
         </label>
       )}
@@ -35,7 +34,7 @@ const Slider = ({ label, value, onChange, variant = "Primary", size = "Medium", 
           value={value}
           onChange={(e) => onChange?.(parseInt(e.target.value))}
           style={{
-            accentColor: colors[variant],
+            accentColor: colors[variant], // Modern browsers will use this for the thumb/track
             height: sizes[size],
             flexGrow: 1,
           }}
