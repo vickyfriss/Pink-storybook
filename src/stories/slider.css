@@ -1,0 +1,47 @@
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    background: #ddd;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  /* Track */
+  .slider::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 4px;
+    background: #ddd;
+  }
+  
+  .slider::-moz-range-track {
+    height: 8px;
+    border-radius: 4px;
+    background: #ddd;
+  }
+  
+  /* Thumb */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: currentColor; /* inherit from accentColor */
+    cursor: pointer;
+    margin-top: -6px; /* to center on the track */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: currentColor;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Optional: set track fill when slider moves */
+  .slider::-webkit-slider-thumb:active {
+    transform: scale(1.1);
+  }
+  
