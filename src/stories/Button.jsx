@@ -32,7 +32,7 @@ Button.propTypes = {
   /** Optional background color override */
   backgroundColor: PropTypes.string,
   /** Size of the button */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['Small', 'Medium', 'Large']),
   /** Button label */
   label: PropTypes.string.isRequired,
   /** Optional click handler */

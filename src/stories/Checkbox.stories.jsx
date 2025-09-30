@@ -11,6 +11,13 @@ const meta = {
     },
     label: { control: "text" },
     disabled: { control: "boolean" },
+    size: {
+      control: { type: "radio" },
+      options: ["Small", "Medium", "Large"],
+    },
+  },
+  parameters: {
+    layout: "centered", // ← centers the component
   },
 };
 
@@ -33,4 +40,5 @@ Default.args = {
   label: "Checkbox",
   disabled: false,
   variant: "primary",
+  size: "Medium",
 };

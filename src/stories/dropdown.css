@@ -1,0 +1,74 @@
+.dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    max-width: 250px; /* not full width */
+  }
+  
+  .dropdown-inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .dropdown-label {
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  /* Variant label colors */
+  .storybook-dropdown--Primary .dropdown-label,
+  .storybook-dropdown--Secondary .dropdown-label {
+    color: #FF69B4; /* pink */
+  }
+  
+  .storybook-dropdown--Ken .dropdown-label {
+    color: #0D98BA; /* blueish */
+  }
+  
+  /* Select box styles */
+  .dropdown-select {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    cursor: pointer;
+  }
+  
+  /* Variant select box colors */
+  .storybook-dropdown--Primary .dropdown-select {
+    background-color: #FF69B4;
+    color: white;
+    border: 2px solid #FF69B4;
+  }
+  
+  .storybook-dropdown--Secondary .dropdown-select {
+    background-color: white;
+    color: #FF69B4;
+    border: 2px solid #FF69B4;
+  }
+  
+  .storybook-dropdown--Ken .dropdown-select {
+    background-color: #0D98BA;
+    color: white;
+    border: 2px solid #0D98BA;
+  }
+  
+  /* Sizes */
+  .storybook-dropdown--Small .dropdown-select {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  .storybook-dropdown--Medium .dropdown-select {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .storybook-dropdown--Large .dropdown-select {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+  

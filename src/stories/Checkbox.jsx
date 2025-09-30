@@ -9,11 +9,13 @@ export const Checkbox = ({
   onChange,
   disabled = false,
   variant = 'primary', // 'primary' | 'secondary' | 'ken'
+  size = 'Medium',     // 'Small' | 'Medium' | 'Large'
 }) => {
   const classes = [
     'checkbox-label',
     disabled ? 'disabled' : '',
     `storybook-checkbox--${variant}`,
+    `storybook-checkbox--${size}`,  // ← add size class
   ].filter(Boolean).join(' ');
 
   return (
@@ -37,4 +39,5 @@ Checkbox.propTypes = {
   onChange: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   variant: PropTypes.oneOf(['primary', 'secondary', 'ken']),
+  size: PropTypes.oneOf(['Small', 'Medium', 'Large']),
 };

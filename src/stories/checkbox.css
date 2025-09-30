@@ -77,3 +77,15 @@
     color: white;
   }
   
+  .storybook-checkbox--Small {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+  .storybook-checkbox--Medium {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+  .storybook-checkbox--Large {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
