@@ -36,7 +36,7 @@ export const Default = (args) => {
 };
 
 Default.args = {
-  checked: false,
+  checked: true,
   label: "Checkbox",
   disabled: false,
   variant: "primary",
