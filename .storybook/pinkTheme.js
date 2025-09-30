@@ -6,7 +6,7 @@ export const pinkTheme = create({
   brandTitle: 'My Pink Storybook',
   brandUrl: '/',
   brandImage: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Barbie_Logo.svg',
-  colorPrimary: '#ff69b4',
+  colorPrimary: '#FF69B4',
   colorSecondary: '#ffc0cb',
   appBg: '#fff0f5',
   appContentBg: '#ffe4e1',
