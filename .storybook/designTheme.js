@@ -1,14 +1,15 @@
-// .storybook/designTheme.js
-
 export const designTheme = {
     colors: {
-      primary: '#FF69B4',   // Barbie pink
-      secondary: '#FFFFFF', // for secondary buttons background
-      secondaryText: '#FF69B4', // text color for secondary
-      ken: '#0D98BA',       // Ken blue
-      textOnPrimary: '#FFFFFF',
-      textOnKen: '#FFFFFF',
-      borderShadow: 'rgba(0,0,0,0.15)',
+      Primary: '#FF69B4',         // Barbie pink
+      Secondary: '#FFFFFF',       // button background
+      SecondaryText: '#FF69B4',   // text for secondary
+      Ken: '#0D98BA',             // Ken blue
+      TextOnPrimary: '#FFFFFF',
+      TextOnKen: '#FFFFFF',
+      BorderShadow: 'rgba(0,0,0,0.15)',
+      PrimaryBorder: '#FF69B4',   // add border color
+      SecondaryBorder: '#FF69B4',
+      KenBorder: '#0D98BA',
     },
     borderRadius: '3em',
     font: {
@@ -17,9 +18,9 @@ export const designTheme = {
       lineHeight: 1,
     },
     sizes: {
-      small: { padding: '11px 20px', fontSize: '14px' },
-      medium: { padding: '12px 24px', fontSize: '16px' },
-      large: { padding: '13px 28px', fontSize: '18px' },
+      Small: { padding: '11px 20px', fontSize: '14px' },
+      Medium: { padding: '12px 24px', fontSize: '16px' },
+      Large: { padding: '13px 28px', fontSize: '18px' },
     },
   };
   

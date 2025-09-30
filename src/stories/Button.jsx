@@ -1,24 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './button.css';
+import { designTheme } from '../../.storybook/designTheme'; // adjust path
 
-/** Primary UI component for user interaction */
-export const Button = ({
-  variant = 'Primary',
-  backgroundColor = null,
-  size = 'medium',
-  label,
-  ...props
-}) => {
-  // dynamically set class based on variant
-  const mode = `storybook-button--${variant.toLowerCase()}`; 
-  // will be 'storybook-button--primary', 'storybook-button--secondary', or 'storybook-button--ken'
+export const Button = ({ variant = 'Primary', size = 'Medium', label, style = {}, ...props }) => {
+  // Map variant to theme colors and borders
+  const variantStyles = {
+    Primary: {
+      backgroundColor: designTheme.colors.Primary,
+      color: designTheme.colors.TextOnPrimary,
+      boxShadow: 'none',
+      border: `1px solid ${designTheme.colors.Primary}`, // use theme color
+    },
+    Secondary: {
+      backgroundColor: designTheme.colors.Secondary,
+      color: designTheme.colors.SecondaryText,
+      boxShadow: `inset 0 0 0 1px ${designTheme.colors.BorderShadow}`,
+      border: `1px solid ${designTheme.colors.SecondaryText}`, // pink border
+    },
+    Ken: {
+      backgroundColor: designTheme.colors.Ken,
+      color: designTheme.colors.TextOnKen,
+      boxShadow: `inset 0 0 0 1px ${designTheme.colors.BorderShadow}`,
+      border: `1px solid ${designTheme.colors.Ken}`, // blue border
+    },
+  };
+
+  // Map size to theme sizes
+  const sizeStyles = designTheme.sizes[size] || designTheme.sizes.Medium;
 
   return (
     <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor ? { backgroundColor } : {}}
+      style={{
+        borderRadius: designTheme.borderRadius,
+        fontFamily: designTheme.font.family,
+        fontWeight: designTheme.font.weight,
+        lineHeight: designTheme.font.lineHeight,
+        cursor: 'pointer',
+        ...variantStyles[variant],
+        ...sizeStyles,
+        ...style, // allow overrides from story
+      }}
       {...props}
     >
       {label}
@@ -27,14 +48,9 @@ export const Button = ({
 };
 
 Button.propTypes = {
-  /** Variant of the button */
   variant: PropTypes.oneOf(['Primary', 'Secondary', 'Ken']),
-  /** Optional background color override */
-  backgroundColor: PropTypes.string,
-  /** Size of the button */
   size: PropTypes.oneOf(['Small', 'Medium', 'Large']),
-  /** Button label */
   label: PropTypes.string.isRequired,
-  /** Optional click handler */
+  style: PropTypes.object,
   onClick: PropTypes.func,
 };
