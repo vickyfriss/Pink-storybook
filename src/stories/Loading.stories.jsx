@@ -1,6 +1,6 @@
 // Loading.stories.jsx
-import React, { useState } from 'react';
-import './loading.css'; // we’ll style it in a moment
+import React from 'react';
+import './loading.css'; // Make sure you have styles
 
 const Loading = ({ variant = 'Primary', size = 'Medium', label = 'Loading...' }) => {
   const colors = {
@@ -21,9 +21,17 @@ const Loading = ({ variant = 'Primary', size = 'Medium', label = 'Loading...' })
         className="loading-spinner"
         style={{ borderTopColor: colors[variant] }}
       />
-      <span style={{ color: colors[variant], fontSize: sizes[size], marginLeft: '8px' }}>
-        {label}
-      </span>
+      {label && (
+        <span
+          style={{
+            color: colors[variant],
+            fontSize: sizes[size],
+            marginLeft: '8px',
+          }}
+        >
+          {label}
+        </span>
+      )}
     </div>
   );
 };
@@ -32,22 +40,46 @@ export default {
   title: 'Components/Loading',
   component: Loading,
   argTypes: {
-    variant: {
-      control: 'radio',
-      options: ['Primary', 'Secondary', 'Ken'],
-    },
-    size: {
-      control: 'radio',
-      options: ['Small', 'Medium', 'Large'],
-    },
+    variant: { control: 'radio', options: ['Primary', 'Secondary', 'Ken'] },
+    size: { control: 'radio', options: ['Small', 'Medium', 'Large'] },
     label: { control: 'text' },
   },
 };
 
+// Default story (with label)
 export const Default = (args) => <Loading {...args} />;
-
 Default.args = {
   variant: 'Primary',
   size: 'Medium',
   label: 'Loading...',
+};
+
+// Icon-only story (without label, double size)
+export const IconOnly = (args) => {
+  // Map original sizes to double
+  const sizeMultiplier = {
+    Small: '36px',   // 12px * 3
+    Medium: '48px',  // 16px * 3
+    Large: '60px',   // 20px * 3
+  };
+
+  return (
+    <div className="loading-wrapper">
+      <div
+        className="loading-spinner"
+        style={{
+          borderTopColor: args.variant === 'Primary' ? '#FF69B4' :
+                         args.variant === 'Secondary' ? '#FF69B4' :
+                         '#0D98BA',
+          width: sizeMultiplier[args.size],
+          height: sizeMultiplier[args.size],
+        }}
+      />
+    </div>
+  );
+};
+
+IconOnly.args = {
+  variant: 'Primary',
+  size: 'Medium',
 };
