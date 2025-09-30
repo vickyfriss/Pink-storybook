@@ -1,0 +1,38 @@
+.loading-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    border-top-color: #FF69B4; /* default pink */
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-Small .loading-spinner {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+  
+  .loading-Medium .loading-spinner {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
+  
+  .loading-Large .loading-spinner {
+    width: 20px;
+    height: 20px;
+    border-width: 3px;
+  }
+  
