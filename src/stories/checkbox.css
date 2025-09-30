@@ -34,58 +34,59 @@
   }
   
   /* Variants */
-  .storybook-checkbox--primary {
+  .storybook-checkbox--Primary {
     color: #FF69B4; /* pink */
   }
   
-  .storybook-checkbox--primary .checkbox-input:checked + .checkbox-custom {
+  .storybook-checkbox--Primary .checkbox-input:checked + .checkbox-custom {
     background-color: #FF69B4;
     border-color: #FF69B4;
   }
   
-  .storybook-checkbox--primary .checkbox-input:checked + .checkbox-custom::after {
+  .storybook-checkbox--Primary .checkbox-input:checked + .checkbox-custom::after {
     color: white;
   }
   
-  .storybook-checkbox--secondary {
+  .storybook-checkbox--Secondary {
     color: #FF69B4; /* pink border & checkmark */
   }
   
-  .storybook-checkbox--secondary .checkbox-custom {
+  .storybook-checkbox--Secondary .checkbox-custom {
     background-color: white;
   }
   
-  .storybook-checkbox--secondary .checkbox-input:checked + .checkbox-custom {
+  .storybook-checkbox--Secondary .checkbox-input:checked + .checkbox-custom {
     background-color: white;
     border-color: #FF69B4;
   }
   
-  .storybook-checkbox--secondary .checkbox-input:checked + .checkbox-custom::after {
+  .storybook-checkbox--Secondary .checkbox-input:checked + .checkbox-custom::after {
     color: #FF69B4; /* pink tick */
   }
   
-  .storybook-checkbox--ken {
+  .storybook-checkbox--Ken {
     color: #0D98BA; /* blue */
   }
   
-  .storybook-checkbox--ken .checkbox-input:checked + .checkbox-custom {
+  .storybook-checkbox--Ken .checkbox-input:checked + .checkbox-custom {
     background-color: #0D98BA;
     border-color: #0D98BA;
   }
   
-  .storybook-checkbox--ken .checkbox-input:checked + .checkbox-custom::after {
+  .storybook-checkbox--Ken .checkbox-input:checked + .checkbox-custom::after {
     color: white;
   }
   
   .storybook-checkbox--Small {
-    padding: 10px 16px;
-    font-size: 12px;
-  }
-  .storybook-checkbox--Medium {
     padding: 11px 20px;
     font-size: 14px;
   }
-  .storybook-checkbox--Large {
+  .storybook-checkbox--Medium {
     padding: 12px 24px;
     font-size: 16px;
   }
+  .storybook-checkbox--Large {
+    padding: 13px 28px;
+    font-size: 18px;
+  }
+  

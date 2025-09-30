@@ -7,7 +7,7 @@ const meta = {
   argTypes: {
     variant: {
       control: { type: "radio" },
-      options: ["primary", "secondary", "ken"],
+      options: ["Primary", "Secondary", "Ken"],
     },
     label: { control: "text" },
     disabled: { control: "boolean" },
@@ -39,6 +39,6 @@ Default.args = {
   checked: true,
   label: "Checkbox",
   disabled: false,
-  variant: "primary",
+  variant: "Primary",
   size: "Medium",
 };

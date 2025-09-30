@@ -8,7 +8,7 @@ export const Checkbox = ({
   checked,
   onChange,
   disabled = false,
-  variant = 'primary', // 'primary' | 'secondary' | 'ken'
+  variant = 'Primary', // 'primary' | 'secondary' | 'ken'
   size = 'Medium',     // 'Small' | 'Medium' | 'Large'
 }) => {
   const classes = [
@@ -38,6 +38,6 @@ Checkbox.propTypes = {
   checked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'ken']),
+  variant: PropTypes.oneOf(['Primary', 'Secondary', 'Ken']),
   size: PropTypes.oneOf(['Small', 'Medium', 'Large']),
 };
