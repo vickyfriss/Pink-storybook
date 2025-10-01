@@ -1,12 +1,19 @@
+// Slider.jsx
 import React from "react";
 import PropTypes from "prop-types";
-import "./slider.css";
+import { designTheme } from "../../.storybook/designTheme"; // adjust path
 
-const Slider = ({ label, value, onChange, variant = "Primary", size = "Medium", inline = false }) => {
+export const Slider = ({ label, value, onChange, variant = "Primary", size = "Medium", inline = false }) => {
   const colors = {
-    Primary: "#FF69B4",
-    Secondary: "#FF69B4",
-    Ken: "#0D98BA",
+    Primary: designTheme.colors.Primary,
+    Secondary: designTheme.colors.Ken, // for border of secondary track
+    Ken: designTheme.colors.Ken,
+  };
+
+  const trackFills = {
+    Primary: designTheme.colors.Secondary,  // e.g., white
+    Secondary: designTheme.colors.Secondary,
+    Ken: designTheme.colors.Secondary,
   };
 
   const sizes = {
@@ -15,34 +22,40 @@ const Slider = ({ label, value, onChange, variant = "Primary", size = "Medium", 
     Large: 16,
   };
 
+  const borderColor = {
+    Primary: designTheme.colors.Primary,
+    Secondary: designTheme.colors.Primary,
+    Ken: designTheme.colors.Ken,
+  };
+
   return (
-    <div className={`slider-wrapper ${inline ? "slider-inline" : ""}`} data-variant={variant} style={{ width: "100%" }}>
-      {inline && label && (
-        <span className="slider-label-inline" style={{ color: colors[variant], marginRight: "10px" }}>
-          {label}
-        </span>
-      )}
-      {!inline && label && (
-        <label className="slider-label" style={{ color: colors[variant], marginBottom: "5px", display: "block" }}>
-          {label}
-        </label>
-      )}
-      <div className="slider-container" style={{ display: "flex", alignItems: "center", width: "100%" }}>
-        <input
-          type="range"
-          className={`slider slider-${size}`}
-          value={value}
-          onChange={(e) => onChange?.(parseInt(e.target.value))}
+    <div style={{ display: inline ? "flex" : "block", alignItems: "center", width: "100%" }}>
+      {label && (
+        <span
           style={{
-            accentColor: colors[variant], // Modern browsers will use this for the thumb/track
-            height: sizes[size],
-            flexGrow: 1,
+            color: colors[variant],
+            marginRight: inline ? 10 : 0,
+            display: inline ? "inline-block" : "block",
+            marginBottom: inline ? 0 : 5,
           }}
-        />
-        <span className="slider-value" style={{ marginLeft: "10px", color: colors[variant], fontWeight: 600 }}>
-          {value}
+        >
+          {label}
         </span>
-      </div>
+      )}
+      <input
+        type="range"
+        value={value}
+        onChange={(e) => onChange(parseInt(e.target.value))}
+        style={{
+          width: "100%",
+          height: sizes[size],
+          accentColor: colors[variant], // thumb color / active part
+          backgroundColor: trackFills[variant], // rest of track
+          border: `1px solid ${borderColor[variant]}`,
+          borderRadius: designTheme.borderRadius,
+        }}
+      />
+      <span style={{ marginLeft: 10, color: colors[variant], fontWeight: 600 }}>{value}</span>
     </div>
   );
 };
@@ -56,4 +69,5 @@ Slider.propTypes = {
   inline: PropTypes.bool,
 };
 
-export default Slider;
+// at the bottom
+export default Slider; // ✅ now it’s a default export

@@ -1,6 +1,5 @@
-// Slider.stories.jsx
 import React, { useState } from "react";
-import Slider from "./Slider";
+import Slider from "./Slider"; // <-- default import
 
 export default {
   title: "Components/Slider",
@@ -14,7 +13,7 @@ export default {
   },
 };
 
-// Default story (label above)
+// --- Default story (label above) ---
 export const Default = (args) => {
   const [value, setValue] = useState(args.value || 50);
   return (
@@ -32,7 +31,7 @@ Default.args = {
   inline: false,
 };
 
-// Inline story (label on the left)
+// --- Inline story (label on the left) ---
 export const Inline = (args) => {
   const [value, setValue] = useState(args.value || 50);
   return (
@@ -47,4 +46,5 @@ Inline.args = {
   size: "Medium",
   value: 50,
   label: "Volume",
+  inline: true,
 };

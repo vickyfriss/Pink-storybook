@@ -1,28 +1,39 @@
-import { expect, userEvent, within } from 'storybook/test';
-
+// Page.stories.jsx
 import { Page } from './Page';
 
 export default {
   title: 'Components/Page',
   component: Page,
-  parameters: {
-    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
-    layout: 'fullscreen',
+  tags: ['autodocs'],
+  argTypes: {
+    headerVariant: {
+      control: 'radio',
+      options: ['Primary', 'Secondary', 'Ken'],
+    },
+    buttonVariant: {
+      control: 'radio',
+      options: ['Primary', 'Secondary', 'Ken'],
+    },
+    squaredButtons: {
+      control: 'boolean',
+    },
   },
 };
 
-export const LoggedOut = {};
+// Default story (Logged out)
+export const LoggedOut = {
+  args:{
+    headerVariant:'Primary',
+    buttonVariant:"Secondary",
+    squaredButtons:false,
+  },
+};
 
-// More on component testing: https://storybook.js.org/docs/writing-tests/interaction-testing
+// Logged in
 export const LoggedIn = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const loginButton = canvas.getByRole('button', { name: /Log in/i });
-    await expect(loginButton).toBeInTheDocument();
-    await userEvent.click(loginButton);
-    await expect(loginButton).not.toBeInTheDocument();
-
-    const logoutButton = canvas.getByRole('button', { name: /Log out/i });
-    await expect(logoutButton).toBeInTheDocument();
+  args:{
+    headerVariant:"Primary",
+    buttonVariant:'Secondary',
+    squaredButtons:true,
   },
 };
