@@ -19,7 +19,7 @@ export const Default = (args) => {
   const [value, setValue] = useState(args.value || "");
 
   return (
-    <div style={{ width: "250px" }}> {/* width-limited like original */}
+    <div style={{ width: "250px" }}>
       <Dropdown
         {...args}
         value={value}
@@ -65,6 +65,55 @@ Inline.args = {
   value: "option1",
   label: "Choose an option",
   size: "Medium",
-  variant: "Secondary",
+  variant: "Primary",
   disabled: false,
+};
+
+// --- Default dropdown with squared corners ---
+export const DefaultSquared = (args) => {
+  const [value, setValue] = useState(args.value || "");
+
+  return (
+    <div style={{ width: "250px" }}>
+      <Dropdown
+        {...args}
+        value={value}
+        onChange={setValue}
+        options={[
+          { value: "option1", label: "Option 1" },
+          { value: "option2", label: "Option 2" },
+          { value: "option3", label: "Option 3" },
+        ]}
+        style={{ borderRadius: "0px" }}
+      />
+    </div>
+  );
+};
+
+DefaultSquared.args = {
+  ...Default.args,
+};
+
+// --- Inline dropdown with squared corners ---
+export const InlineSquared = (args) => {
+  const [value, setValue] = useState(args.value || "");
+
+  return (
+    <Dropdown
+      {...args}
+      value={value}
+      onChange={setValue}
+      options={[
+        { value: "option1", label: "Option 1" },
+        { value: "option2", label: "Option 2" },
+        { value: "option3", label: "Option 3" },
+      ]}
+      inline
+      style={{ borderRadius: "0px" }}
+    />
+  );
+};
+
+InlineSquared.args = {
+  ...Inline.args,
 };
